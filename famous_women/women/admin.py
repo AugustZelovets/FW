@@ -5,7 +5,6 @@ from .models import *
 
 class WomenAdmin(admin.ModelAdmin):
     list_display = 'id', 'title', 'time_create', 'time_update', 'is_published', 'cat'
-
     list_display_links = 'id', 'title'
     search_fields = 'title', 'content'
     list_editable = ('is_published',)
@@ -16,6 +15,7 @@ class WomenAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = 'name',
     list_display_links = 'name',
+    search_fields = ('name',)
     prepopulated_fields = {'slug': ('name',)}
 
 
